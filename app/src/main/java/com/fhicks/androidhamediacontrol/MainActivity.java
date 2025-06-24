@@ -2,11 +2,17 @@ package com.fhicks.androidhamediacontrol;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.content.Intent;
 
 import com.fhicks.androidhamediacontrol.backend.HomeAssistantConnector;
 
 public class MainActivity extends AppCompatActivity {
+
+    public static Context appContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,8 +24,10 @@ public class MainActivity extends AppCompatActivity {
                 "REDACTED",
                 "REDACTED"
         );
+        appContext = getApplicationContext();
 
-        System.out.println(connector.testConnection());
+        connector.testConnection();
+
 
 
     }
